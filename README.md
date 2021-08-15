@@ -1,4 +1,4 @@
-# Consumiendo [API de de las loterias](https://github.com/Erinxon/ApiLoterias)
+# Consumiendo [API de las loterias](https://github.com/Erinxon/ApiLoterias)
 ## Aplicación para consultar los resultados de las princiaples loterias.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
