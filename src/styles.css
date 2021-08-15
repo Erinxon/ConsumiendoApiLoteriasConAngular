@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+.score {
+  color: #fff;
+  line-height: 35px;
+  font-size: 16px;
+  min-width: 35px;
+  width: auto;
+  margin: 0 5px 5px 0;
+  display: inline-block;
+  text-align: center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+
+  background: #6db3f2;
+  background: -moz-linear-gradient(
+    45deg,
+    #6db3f2 0%,
+    #54a3ee 50%,
+    #3690f0 51%,
+    #1e69de 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #6db3f2 0%,
+    #54a3ee 50%,
+    #3690f0 51%,
+    #1e69de 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #6db3f2 0%,
+    #54a3ee 50%,
+    #3690f0 51%,
+    #1e69de 100%
+  );
+}
+
+.currentDate {
+  font-size: 12px;
+  background-color: #333;
+  color: #fff;
+  padding: 3px 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.noCurrentDate {
+  font-size: 12px;
+  background-color: #d7d7d7;
+  color: #333;
+  padding: 3px 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+
+
+.bonus {
+  background: #ffb76b;
+  background: -moz-linear-gradient(
+    45deg,
+    #ffb76b 0%,
+    #ffa73d 50%,
+    #ff7c00 51%,
+    #ff7f04 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #ffb76b 0%,
+    #ffa73d 50%,
+    #ff7c00 51%,
+    #ff7f04 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #ffb76b 0%,
+    #ffa73d 50%,
+    #ff7c00 51%,
+    #ff7f04 100%
+  );
+}

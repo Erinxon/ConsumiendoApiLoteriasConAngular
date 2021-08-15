@@ -1,0 +1,33 @@
+<app-lista-sorteos [listaSorteos]="data.sorteos"></app-lista-sorteos>
+
+<div class="list-group" *ngIf="data">
+    <div *ngFor="let item of data.sorteoEspeciales">
+        <span class="list-group-item list-group-item-action active">{{item.nombre}}</span>
+        <div class="row">
+            <div class="col-3">
+                <img [src]="item.imagen" [alt]="item.nombre" class="p-3" width="100" height="100">
+            </div>
+            <div class="col-6 mt-3">
+                <div class="row">
+                    <div class="col-12">
+                        <span>{{item.nombre}}</span>
+                    </div>
+                    <div class="col-12">
+                        <table class="table">
+                            <tbody>
+                                <tr *ngFor="let item of item.numeros">
+                                    <th scope="row">{{item.numeroEspecial}}</th>
+                                    <td scope="row" class="bonus " *ngIf="item.bonus">{{item.bonus}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 mt-3 float-right">
+                <span
+                    [ngClass]="{'currentDate': IsCurrentDate(item.fecha), 'noCurrentDate': !IsCurrentDate(item.fecha)}">{{item.fecha}}</span>
+            </div>
+        </div>
+    </div>
+</div>
