@@ -1,4 +1,4 @@
-<div class="list-group" *ngIf="listaSorteos">
+<div class="list-group">
     <div *ngFor="let item of listaSorteos">
         <span class="list-group-item list-group-item-action active">{{item.nombre}}</span>
         <div class="row">
@@ -23,8 +23,4 @@
         </div>
     </div>
 </div>
-<div class="text-center" *ngIf="!listaSorteos">
-    <div class="spinner-border" role="status">
-        <span class="sr-only"></span>
-    </div>
-</div>
+<app-loanding></app-loanding>

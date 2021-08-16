@@ -1,7 +1,8 @@
-<app-lista-sorteos [listaSorteos]="data.sorteos"></app-lista-sorteos>
+<app-lista-sorteos [listaSorteos]="data"></app-lista-sorteos>
 
-<div class="list-group" *ngIf="data">
-    <div *ngFor="let item of data.sorteoEspeciales">
+
+<div class="list-group" *ngIf="sorteosEspeciales">
+    <div *ngFor="let item of sorteosEspeciales">
         <span class="list-group-item list-group-item-action active">{{item.nombre}}</span>
         <div class="row">
             <div class="col-3">

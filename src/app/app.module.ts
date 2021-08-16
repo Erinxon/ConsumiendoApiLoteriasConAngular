@@ -17,6 +17,8 @@ import { AmericanasComponent } from './pages/americanas/americanas.component';
 import { LaSuerteComponent } from './pages/la-suerte/la-suerte.component';
 import { LotedomComponent } from './pages/lotedom/lotedom.component';
 import { PrimeraComponent } from './pages/primera/primera.component';
+import { ErrorsComponent } from './shared/errors/errors.component';
+import { LoandingComponent } from './shared/loanding/loanding.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { PrimeraComponent } from './pages/primera/primera.component';
     AmericanasComponent,
     LaSuerteComponent,
     LotedomComponent,
-    PrimeraComponent
+    PrimeraComponent,
+    ErrorsComponent,
+    LoandingComponent
   ],
   imports: [
     BrowserModule,
