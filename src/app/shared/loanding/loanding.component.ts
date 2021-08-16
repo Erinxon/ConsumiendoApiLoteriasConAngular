@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { LoandingService } from 'src/app/services/loanding.service';
 
 @Component({
@@ -6,10 +7,15 @@ import { LoandingService } from 'src/app/services/loanding.service';
   templateUrl: './loanding.component.html',
   styleUrls: ['./loanding.component.css']
 })
-export class LoandingComponent implements OnInit {
+export class LoandingComponent implements OnInit, OnDestroy {
   isLoanding: boolean = false;
+  suscription!: Subscription;
+
   constructor(private loandingService: LoandingService) { 
-    this.loandingService.getLoanding().subscribe( l => this.isLoanding = l);
+    this.suscription = this.loandingService.getLoanding().subscribe( l => this.isLoanding = l);
+  }
+  ngOnDestroy(): void {
+    this.suscription.unsubscribe();
   }
 
   ngOnInit(): void {

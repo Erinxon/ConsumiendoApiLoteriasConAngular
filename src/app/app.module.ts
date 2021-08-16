@@ -5,6 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApiInterceptorInterceptor } from './interceptors/api-interceptor.interceptor';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { MenuComponent } from './shared/menu/menu.component';
 import { LotekaComponent } from './pages/loteka/loteka.component';
 import { LeidsaComponent } from './pages/leidsa/leidsa.component';
@@ -19,6 +20,7 @@ import { LotedomComponent } from './pages/lotedom/lotedom.component';
 import { PrimeraComponent } from './pages/primera/primera.component';
 import { ErrorsComponent } from './shared/errors/errors.component';
 import { LoandingComponent } from './shared/loanding/loanding.component';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -43,9 +45,11 @@ import { LoandingComponent } from './shared/loanding/loanding.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS, useClass: ApiInterceptorInterceptor, multi: true
-  }],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

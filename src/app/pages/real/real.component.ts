@@ -6,30 +6,20 @@ import { LoteriaServicesService } from 'src/app/services/loteria-services.servic
 @Component({
   selector: 'app-real',
   templateUrl: './real.component.html',
-  styleUrls: ['./real.component.css']
+  styleUrls: ['./real.component.css'],
 })
 export class RealComponent implements OnInit {
   data!: any;
-  
-  constructor(private svs: LoteriaServicesService, private errorService: ErrorService,
-    private loandingService: LoandingService) {
-    
-  }
+
+  constructor(private svs: LoteriaServicesService) {}
 
   getSorteos(): any {
-    this.loandingService.setLoanding(true);
-    this.svs.getLoteriaReal().subscribe(l => {
+    this.svs.getLoteriaReal().subscribe((l) => {
       this.data = l.data.sorteos;
-      this.loandingService.setLoanding(false);
-   }, error => {
-    this.errorService.setError({IsError: true, Message: 'Error al obtener los datos'});
-     this.loandingService.setLoanding(false);
-   });
+    });
   }
 
   ngOnInit(): void {
     this.getSorteos();
   }
-
-
 }

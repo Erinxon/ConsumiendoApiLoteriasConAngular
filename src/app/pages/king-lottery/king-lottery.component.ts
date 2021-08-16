@@ -6,29 +6,20 @@ import { LoteriaServicesService } from 'src/app/services/loteria-services.servic
 @Component({
   selector: 'app-king-lottery',
   templateUrl: './king-lottery.component.html',
-  styleUrls: ['./king-lottery.component.css']
+  styleUrls: ['./king-lottery.component.css'],
 })
 export class KingLotteryComponent implements OnInit {
   data!: any;
-  
-  constructor(private svs: LoteriaServicesService, private errorService: ErrorService,
-    private loandingService: LoandingService) {
-    
-  }
+
+  constructor(private svs: LoteriaServicesService) {}
 
   getSorteos(): any {
-    this.loandingService.setLoanding(true);
-    this.svs.getLoteriaKingLottery().subscribe(l => {
+    this.svs.getLoteriaKingLottery().subscribe((l) => {
       this.data = l.data.sorteos;
-      this.loandingService.setLoanding(false);
-   }, error => {
-    this.errorService.setError({IsError: true, Message: 'Error al obtener los datos'});
-     this.loandingService.setLoanding(false);
-   });
+    });
   }
 
   ngOnInit(): void {
     this.getSorteos();
   }
-
 }
